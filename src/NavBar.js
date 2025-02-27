@@ -18,7 +18,6 @@ const NavBar = () => {
             <motion.li
               key={link}
               className="nav-item"
-              // "whileHover" triggers on hover
               whileHover="hover"
               initial="rest"
               animate="rest"
@@ -27,7 +26,6 @@ const NavBar = () => {
                 hover: {},
               }}
             >
-              {/* Container with two spans: topSpan & bottomSpan */}
               <div className="nav-text-wrapper">
                 <motion.span
                   className="nav-text topSpan"
@@ -54,7 +52,6 @@ const NavBar = () => {
           ))}
         </ul>
 
-        {/* A special CTA button with a circle that slides in from the left on hover */}
         <motion.button
           className="contact-btn"
           initial="rest"
