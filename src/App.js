@@ -7,6 +7,8 @@ import HeroSection from './HeroSection';
 import AboutSection from './AboutSection';
 import ImageSection from './ImageSection';
 import PricingSection from './PricingSection';
+import NavBar from './NavBar';
+import NextSection from './NextSection';
 
 function App() {
   return (
