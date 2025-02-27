@@ -28,7 +28,7 @@ const HeroSection = () => {
         <motion.div className="sticky-container">
           {/* Hero image */}
           <motion.img
-            src="/hero.jpg"
+            src="/public/hero.jpg"
             alt="Hero"
             className="hero-image"
             style={{ scale: imageScale }}
