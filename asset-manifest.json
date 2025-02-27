@@ -1,16 +1,14 @@
 {
   "files": {
-    "main.css": "/spectra-vision/static/css/main.5a5546a3.css",
-    "main.js": "/spectra-vision/static/js/main.6b538a2c.js",
-    "static/js/453.1397e646.chunk.js": "/spectra-vision/static/js/453.1397e646.chunk.js",
+    "main.css": "/spectra-vision/static/css/main.93bf4636.css",
+    "main.js": "/spectra-vision/static/js/main.ee1a8de3.js",
     "static/media/logo.svg": "/spectra-vision/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/spectra-vision/index.html",
-    "main.5a5546a3.css.map": "/spectra-vision/static/css/main.5a5546a3.css.map",
-    "main.6b538a2c.js.map": "/spectra-vision/static/js/main.6b538a2c.js.map",
-    "453.1397e646.chunk.js.map": "/spectra-vision/static/js/453.1397e646.chunk.js.map"
+    "main.93bf4636.css.map": "/spectra-vision/static/css/main.93bf4636.css.map",
+    "main.ee1a8de3.js.map": "/spectra-vision/static/js/main.ee1a8de3.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a5546a3.css",
-    "static/js/main.6b538a2c.js"
+    "static/css/main.93bf4636.css",
+    "static/js/main.ee1a8de3.js"
   ]
 }
