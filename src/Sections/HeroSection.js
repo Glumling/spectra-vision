@@ -3,62 +3,89 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import './HeroSection.css';
 
 const HeroSection = () => {
-  // useScroll gives us a scrollYProgress value between 0 and 1
+  // We'll track scroll progress across the entire page (0 to 1)
   const { scrollYProgress } = useScroll();
 
-  // We can transform the scrollYProgress into different animation outputs
-  // Example: scale the image from 1.2 to 1.0 as we scroll from top to bottom
-  const imageScale = useTransform(scrollYProgress, [0, 0.5], [1.2, 1.0]);
+  // IMAGE SCALE: from 1.1 at the top to 1.0 around 50% scroll
+  const imageScale = useTransform(scrollYProgress, [0, 0.5], [1.1, 1.0]);
 
-  // Move the large heading up slightly as we scroll
-  const headingY = useTransform(scrollYProgress, [0, 0.5], [0, -50]);
+  // HEADING Y: moves the big "Clivelle*" text up slightly as we scroll
+  const headingY = useTransform(scrollYProgress, [0, 0.3], [0, -50]);
 
-  // Fade in shapes from bottom
-  const shapesY = useTransform(scrollYProgress, [0, 0.2], [50, 0]);
-  const shapesOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  // BLOCK/BLACK PANEL RISING: moves from 100% to 0% of its height
+  const panelY = useTransform(scrollYProgress, [0.2, 0.8], [100, 0]);
+
+  // OPACITY for the subtext: fade in around 0.2 scroll
+  const subtextOpacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
 
   return (
     <section className="hero-section">
-      {/* 
-        The outer container is extra tall so we can scroll through it.
-        The .sticky-container is pinned using position: sticky and top: 0,
-        so it stays fixed while we scroll through this section’s height.
-      */}
+      {/* NAVBAR */}
+      <div className="navbar">
+        <div className="navbar-left">
+          <span className="logo">
+            VIPER<span className="red-asterisk">*</span>
+          </span>
+        </div>
+        <div className="navbar-right">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#blog">Blog</a></li>
+          </ul>
+          <button className="contact-btn">Get in touch</button>
+        </div>
+      </div>
+      {/* RED TOP BAR */}
+      <div className="top-red-bar"></div>
+
+      {/* SCROLL CONTAINER: pinned for the hero effect */}
       <div className="hero-scroll-container">
-        <motion.div className="sticky-container">
-          {/* Hero image */}
+        <motion.div className="hero-sticky">
+
+          {/* The hero image pinned behind everything */}
           <motion.img
-            src="/public/hero.jpg"
+            src="/hero.jpg"
             alt="Hero"
             className="hero-image"
             style={{ scale: imageScale }}
           />
 
-          {/* Large heading that sits behind the image visually (z-index) */}
+          {/* Big heading text that slides upward */}
           <motion.h1
             className="hero-title"
             style={{ y: headingY }}
           >
-            Clivelle
+            Clivelle<span className="red-asterisk">*</span>
           </motion.h1>
 
-          {/* Shapes that come from the bottom */}
+          {/* Copyright and short line */}
           <motion.div
-            className="hero-shapes"
-            style={{ y: shapesY, opacity: shapesOpacity }}
-          >
-            <div className="hero-shape shape-1"></div>
-            <div className="hero-shape shape-2"></div>
-            <div className="hero-shape shape-3"></div>
-          </motion.div>
-
-          {/* Small subheading or tagline */}
-          <motion.p
-            className="hero-tagline"
+            className="hero-copyright"
             style={{ y: headingY }}
           >
-            I’m a digital designer and 3D renderer with over a decade of experience in the field.
-          </motion.p>
+            ©2025
+          </motion.div>
+
+          {/* Subheading on the right side, fades in */}
+          <motion.div
+            className="hero-subheading"
+            style={{ opacity: subtextOpacity }}
+          >
+            <p>
+              Hi, I am Clive. I’m a digital designer and highly talented 3D
+              renderer with over a decade of experience in the field.
+            </p>
+          </motion.div>
+
+          {/* Black panel (or shapes) rising from the bottom */}
+          <motion.div
+            className="bottom-panel"
+            style={{ y: panelY }}
+          >
+          </motion.div>
+
         </motion.div>
       </div>
     </section>

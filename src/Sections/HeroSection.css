@@ -1,102 +1,185 @@
+/********************************************/
+/* HERO SECTION LAYOUT */
+/********************************************/
 .hero-section {
-    /* This makes the hero section tall, so we can scroll through it.
-       Adjust the height to control how long the pinned hero stays visible. */
-    height: 200vh;
     position: relative;
-    background: #fff;
+    width: 100%;
+    /* We make the section taller so there's room to scroll 
+       and the pinned hero remains in place for a while. */
+    height: 200vh;
+    background-color: #000;
   }
   
-  /* The container that pins the hero in place */
+  /********************************************/
+  /* NAVBAR */
+  /********************************************/
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 10; /* on top of hero */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    background: transparent;
+  }
+  
+  .navbar-left .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  
+  .red-asterisk {
+    color: #ff3c3c; /* a bright red */
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-right ul {
+    list-style: none;
+    display: flex;
+    margin-right: 1rem;
+  }
+  
+  .navbar-right li {
+    margin: 0 0.5rem;
+  }
+  
+  .navbar-right a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-right a:hover {
+    color: #ff3c3c;
+  }
+  
+  .contact-btn {
+    background: #ff3c3c;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+  
+  .contact-btn:hover {
+    background: #ff6565;
+  }
+  
+  /********************************************/
+  /* RED TOP BAR */
+  /********************************************/
+  .top-red-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ff3c3c;
+    z-index: 9;
+  }
+  
+  /********************************************/
+  /* PINNED HERO CONTENT */
+  /********************************************/
+  /* This container is pinned so that as you scroll, 
+     the hero remains in place until the user scrolls further. */
   .hero-scroll-container {
     position: relative;
     width: 100%;
     height: 100%;
   }
   
-  /* The sticky container that remains fixed during scroll */
-  .sticky-container {
+  .hero-sticky {
     position: sticky;
     top: 0;
-    height: 100vh; /* Full viewport height */
     width: 100%;
+    height: 100vh; /* pinned area is full viewport height */
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   
-  /* Hero image, behind the text */
+  /********************************************/
+  /* HERO IMAGE */
+  /********************************************/
   .hero-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* or contain, depending on your image aspect ratio */
-    z-index: 1;
+    object-fit: cover;
+    z-index: 1; /* behind text or adjust as you like */
   }
   
-  /* Large heading that sits behind the hero image or partially behind it. 
-     We put it above or below the image with z-index. 
-     If you want the text behind the image, set z-index lower than image. */
+  /********************************************/
+  /* HERO TITLE */
+  /********************************************/
   .hero-title {
     position: absolute;
-    z-index: 2; /* If you want it behind the image, use 0 or 1 if the image is z-index:1 */
-    bottom: 20%;
-    left: 5%;
-    font-size: 8rem;
-    color: #fff;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: -2px;
-    mix-blend-mode: difference; /* optional for cool effect if image is bright/dark */
-    margin: 0;
-  }
-  
-  /* Tagline or subheading, placed near the bottom or top */
-  .hero-tagline {
-    position: absolute;
-    z-index: 3;
     bottom: 10%;
-    left: 5%;
-    font-size: 1.2rem;
+    left: 2rem;
+    font-size: 8rem;
+    font-weight: 800;
     color: #fff;
-    width: 40%;
-    line-height: 1.5;
-    margin: 0;
-    mix-blend-mode: difference;
+    line-height: 0.9;
+    z-index: 2; /* if you want the text behind the image, set z-index < 1 */
+    pointer-events: none; /* text not selectable if you want that effect */
+    mix-blend-mode: normal; /* or difference if you want a special effect */
   }
   
-  /* Shapes container */
-  .hero-shapes {
+  /********************************************/
+  /* COPYRIGHT (©2025) */
+  /********************************************/
+  .hero-copyright {
+    position: absolute;
+    bottom: 20%;
+    left: 2rem;
+    font-size: 1rem;
+    color: #fff;
+    z-index: 2;
+    opacity: 0.8;
+  }
+  
+  /********************************************/
+  /* SUBHEADING/TAGLINE */
+  /********************************************/
+  .hero-subheading {
+    position: absolute;
+    bottom: 15%;
+    right: 2rem;
+    width: 300px;
+    color: #fff;
+    z-index: 3;
+    font-size: 1rem;
+    line-height: 1.4;
+    opacity: 1;
+  }
+  
+  .hero-subheading p {
+    margin: 0;
+  }
+  
+  /********************************************/
+  /* BOTTOM PANEL (BLACK) RISING UP */
+  /********************************************/
+  .bottom-panel {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 300px; /* how tall your shapes area is */
-    z-index: 4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Individual shape styles - example squares or rectangles that animate upward */
-  .hero-shape {
-    width: 100px;
-    height: 100px;
-    background-color: #f00; /* example color */
-    margin: 0 10px;
-    border-radius: 8px;
-  }
-  
-  /* You can create different classes for different shapes if you want variation */
-  .shape-1 {
-    background-color: #ff5858;
-  }
-  .shape-2 {
-    background-color: #ffcc00;
-  }
-  .shape-3 {
-    background-color: #0099ff;
+    height: 40%;
+    background-color: #000; 
+    z-index: 2; /* sits above the image but below the subheading if you want */
   }
   

@@ -6,7 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  background: #fff;
+  color: #fff;
+  background-color: #000; /* The rest of the site can be black */
   cursor: none; /* Hide the default cursor */
 }
 
