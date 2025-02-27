@@ -13,7 +13,9 @@ function App() {
     <div>
       <CustomCursor />
       <motion.div initial="initial" animate="animate" exit="exit">
+        <NavBar />
         <HeroSection />
+        <NextSection />
         <AboutSection />
         <ImageSection />
         <PricingSection />

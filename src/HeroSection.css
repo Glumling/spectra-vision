@@ -1,0 +1,87 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  /* 200vh so there's enough room to scroll and pin the hero */
+  height: 200vh;
+  background-color: #000;
+}
+
+.hero-scroll-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* The pinned container */
+.hero-sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Hero image behind everything (z-index 1) */
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Large heading text (z-index 2 if you want it above the image) */
+.hero-title {
+  position: absolute;
+  bottom: 20%;
+  left: 5%;
+  font-size: 6rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 0.9;
+  z-index: 2;
+}
+
+.red-asterisk {
+  color: #ff3c3c;
+}
+
+/* Subheading (z-index 2 or 3) */
+.hero-subheading {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  width: 30%;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #fff;
+  z-index: 2;
+}
+
+/* Boxes that rise from the bottom. 
+   Start them off-screen (positioned absolutely at the bottom). */
+.box {
+  position: absolute;
+  bottom: 0;
+  width: 20%;
+  height: 50%;
+  z-index: 3; /* above the image, or adjust as desired */
+  background-color: #fff; /* White boxes, or change color as you like */
+  opacity: 0.9;
+}
+
+/* You can place them side-by-side or with spacing. 
+   Adjust left or right positions. */
+.box1 {
+  left: 0;
+}
+
+.box2 {
+  left: 20%;
+}
+
+.box3 {
+  left: 40%;
+}
