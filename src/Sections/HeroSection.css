@@ -1,38 +1,102 @@
 .hero-section {
-    height: 100vh;
+    /* This makes the hero section tall, so we can scroll through it.
+       Adjust the height to control how long the pinned hero stays visible. */
+    height: 200vh;
     position: relative;
+    background: #fff;
+  }
+  
+  /* The container that pins the hero in place */
+  .hero-scroll-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* The sticky container that remains fixed during scroll */
+  .sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: white;
-    overflow: hidden;
   }
   
-  .background-elements .line, .background-elements .square {
+  /* Hero image, behind the text */
+  .hero-image {
     position: absolute;
-    background: #e0e0e0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* or contain, depending on your image aspect ratio */
+    z-index: 1;
   }
   
-  .background-elements .line {
-    width: 200px;
-    height: 2px;
-  }
-  
-  .background-elements .square {
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-  }
-  
-  .hero-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    background: #000;
+  /* Large heading that sits behind the hero image or partially behind it. 
+     We put it above or below the image with z-index. 
+     If you want the text behind the image, set z-index lower than image. */
+  .hero-title {
+    position: absolute;
+    z-index: 2; /* If you want it behind the image, use 0 or 1 if the image is z-index:1 */
+    bottom: 20%;
+    left: 5%;
+    font-size: 8rem;
     color: #fff;
-    cursor: pointer;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    mix-blend-mode: difference; /* optional for cool effect if image is bright/dark */
+    margin: 0;
+  }
+  
+  /* Tagline or subheading, placed near the bottom or top */
+  .hero-tagline {
+    position: absolute;
+    z-index: 3;
+    bottom: 10%;
+    left: 5%;
+    font-size: 1.2rem;
+    color: #fff;
+    width: 40%;
+    line-height: 1.5;
+    margin: 0;
+    mix-blend-mode: difference;
+  }
+  
+  /* Shapes container */
+  .hero-shapes {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px; /* how tall your shapes area is */
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Individual shape styles - example squares or rectangles that animate upward */
+  .hero-shape {
+    width: 100px;
+    height: 100px;
+    background-color: #f00; /* example color */
+    margin: 0 10px;
+    border-radius: 8px;
+  }
+  
+  /* You can create different classes for different shapes if you want variation */
+  .shape-1 {
+    background-color: #ff5858;
+  }
+  .shape-2 {
+    background-color: #ffcc00;
+  }
+  .shape-3 {
+    background-color: #0099ff;
   }
   
