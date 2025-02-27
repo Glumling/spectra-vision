@@ -3,10 +3,10 @@ import './App.css';
 import React from 'react';
 import { motion } from 'framer-motion';
 import CustomCursor from './CustomCursor';
-import HeroSection from './Sections/HeroSection';
-import AboutSection from './Sections/AboutSection';
-import ImageSection from './Sections/ImageSection';
-import PricingSection from './Sections/PricingSection';
+import HeroSection from './HeroSection';
+import AboutSection from './AboutSection';
+import ImageSection from './ImageSection';
+import PricingSection from './PricingSection';
 
 function App() {
   return (
