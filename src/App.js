@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { motion } from 'framer-motion';
+import CustomCursor from './CustomCursor';
+import HeroSection from './Sections/HeroSection';
+import AboutSection from './Sections/AboutSection';
+import ImageSection from './Sections/ImageSection';
+import PricingSection from './Sections/PricingSection';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CustomCursor />
+      <motion.div initial="initial" animate="animate" exit="exit">
+        <HeroSection />
+        <AboutSection />
+        <ImageSection />
+        <PricingSection />
+      </motion.div>
     </div>
   );
 }

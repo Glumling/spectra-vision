@@ -1,0 +1,38 @@
+.hero-section {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    overflow: hidden;
+  }
+  
+  .background-elements .line, .background-elements .square {
+    position: absolute;
+    background: #e0e0e0;
+  }
+  
+  .background-elements .line {
+    width: 200px;
+    height: 2px;
+  }
+  
+  .background-elements .square {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+  }
+  
+  .hero-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
